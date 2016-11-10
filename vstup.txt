@@ -1,0 +1,11 @@
+pocatek_intervalu
+-2
+
+konec_intervalu
+2
+
+pocet_kroku
+50
+
+exponent
+2
