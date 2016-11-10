@@ -4,6 +4,9 @@
 #include <vector>
 #include <cstdlib>		//=>	exit(1)
 
+#include "calc.h"
+//#include "fun.h"
+
 using namespace std;
 
 void input_val(const char* filename, vector<double> *input)
@@ -40,11 +43,6 @@ void input_val(const char* filename, vector<double> *input)
     f.close();
 }
 
-double fun(double base, double exponent)
-{
-    return pow(base, exponent);
-}
-
 void save_val(const char* filename, vector<double> *x, vector<double> *y, double Size)
 {
     ofstream o;
@@ -56,19 +54,6 @@ void save_val(const char* filename, vector<double> *x, vector<double> *y, double
         o << (x->at(i)) << "\t" << (y->at(i)) << endl;
     }
     o.close();
-}
-
-void calc(vector<double> *x, vector<double> *y, double n_step, double x_a, double x_b, double expo)
-{
-
-  double h = (x_b - x_a) / n_step;
-
-  //vypocet prubehu funkce
-  for(int i = 0; i <= n_step; i++)
-  {
-    x->at(i) = x_a + h * i;
-    y->at(i) = fun(x->at(i), expo);
-  }
 }
 
 int main(){
